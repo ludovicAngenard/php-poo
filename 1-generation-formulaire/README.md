@@ -16,7 +16,7 @@ Imaginez un formulaire
 </form>
  ```
  
-Les variables $action, $method, $firstname et $lastname venant d'ailleurs, une base de données par exemple.
+Les variables $action, $method, $firstname et $lastname étant générées voire validées ailleurs.
 
 Comme vous pouvez le voir, l'HTML et le PHP sont mêlés.
 
@@ -44,8 +44,12 @@ Créer, au sein du fichier `Form.php`, une classe Form qui s'occupera de génér
 Utilisez des noms de propriétés et de méthodes qui ont du sens, restez simple et commentez votre code.
 
 # Vous rencontrez une difficulté ? 
-Vous pouvez me contacter via Discord. Vous pouvez aussi glisser un commentaire lors de votre merge request.
-Vous n'avez pas fini à 16h? Pas grave. Faites tout de même votre merge request.
+Un incompréhension dans l'exercice ? Une contrainte personelle ? 
+Vous pouvez me contacter via Discord. Vous pouvez aussi glisser un commentaire lors de votre merge request
+
+
+# Vous n'avez pas fini à 16h? 
+Pas grave. Faites tout de même votre merge request. Mais j'aimerais qu'elle soit propre, commentée et sans code superflu.
 
 # Pour aller plus loin
 
@@ -64,9 +68,9 @@ $form = new Form($action, $method)  // créer le début du formulaire
 
 echo $form->build(); // générer le formulaire
 ```
-Que faudrais-t-il modifier au sein du votre pour que celà fonctionne ?
+Que faudrait-il modifier au sein du votre pour que celà fonctionne ?
 
 # Ressources
-* [Introduction à la POO](https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1665911-introduction-a-la-poo)
-* [Bien programmer en PHP](https://phptherightway.com/)
-* [La cheatsheet de php](https://learnxinyminutes.com/docs/fr-fr/php-fr/)
+* [Introduction à la POO sur Open Classroom](https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1665911-introduction-a-la-poo)
+* [PHP the right way](https://phptherightway.com/)
+* [La cheatsheet de php sur](https://learnxinyminutes.com/docs/fr-fr/php-fr/)
