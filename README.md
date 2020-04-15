@@ -18,7 +18,7 @@ Tout se trouve dans le dossier [1-generation-formulaire](./1-generation-formulai
 Pour ceux qui ont réalisé du copier-coller hier ou qui ont éprouvé beaucoup de difficultés:
  - reprenez le [1-generation-formulaire](./1-generation-formulaire), intégrez ce qui est disponible dans le fichier `Form.php`du dossier [2-refactoring-de-classe](./2-refactoring-de-classe). 
  
- Je ne vous demande pas de réaliser un copier coller mais de le réécrire et de le comprendre puis implémentez une nouvelle méthode dans le form : `addSelectField($options, $name, $value)`
+ Je ne vous demande pas de réaliser un copier coller mais de le réécrire et de le comprendre puis implémentez une nouvelle méthode dans le form : `addSelectField($options, $fieldName, $fieldValue)`
 
 Ce n'est pas pour vous punir, loin de là, mais vous seriez dépassés par l'étape d'après sinon.
 
