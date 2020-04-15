@@ -30,8 +30,8 @@ Elle est obligatoirement appelée par une autre classe de la manière suivante :
 Vous me voyez venir ? 
 
 L'exercice du jour est le suivant : 
-* Implémentez les classes `TextField`, `NumberField` ou encore `CheckboxField`
-* Modifiez le code présent dans Form.php
+
+Implémentez les classes `TextField`, `NumberField` ou encore `CheckboxField` en utilisant la classe abstraite. L'objectif étant de ne plus avoir directement le html dans la classe Form. par ex: `function addTextField($name, $value){ $this.fields[] = new TextField($name, $value)}`
 
 L'objectif étant de livrer votre code, tout comme hier via pull request d'ici 16h15.
 
@@ -43,7 +43,9 @@ Vous pouvez me contacter via Discord. Vous pouvez aussi glisser un commentaire l
 Pas grave. Faites tout de même votre merge request. Mais j'aimerais qu'elle soit propre, commentée et sans code superflu.
 
 # Pour aller plus loin
-Suite à cette décomposition en classes. Ne serait-il possible d'utiliser la méthode magique `__toString` d'une manière pertinente ?
+Tout d'abord ne serait-il pas encorepossible de refactorer vos méthodes `addTextField`, `addCheckboxField`... ?
+
+De plus, suite à cette décomposition en classes. Ne serait-il possible d'utiliser la méthode magique `__toString` d'une manière pertinente ?
 
 # Ressources
 * [Refactoring Guru](https://refactoring.guru)
