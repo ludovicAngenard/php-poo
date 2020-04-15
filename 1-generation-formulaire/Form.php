@@ -10,6 +10,7 @@ class Form{
 
     public function addTextField(string $name, string $value){ // permet de créer un input, le nom et la valeur de celui ci sont requis
        $this->html.= "<input name='$name' value='$value' >";
+       
        return $this;
     }
 
@@ -25,16 +26,19 @@ class Form{
         }
         
         $this->html.="</select>";
+        return $this;
     }
 
     public function addTextArea(string $name,string $text){ // permet de créer un textarea a partir du name et de son contenu 
         $this->html.=" <textarea  name='$name' > $text</textarea>";
+        return $this;
     }
 
     public function addRadio(string $name, array $radios){ // permet de créer des radio bouton a partir du name et d'un tableau 
         foreach($radios as $nb => $radio){
             $this->html.="<div> <input type=radio  name='$name'' value='$nb'> <label for='$nb'> $radio</label> </div>";
         }
+        return $this;
        
     }
 

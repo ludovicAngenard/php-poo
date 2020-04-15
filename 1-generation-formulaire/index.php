@@ -13,6 +13,6 @@ $form->addTextField('nom',$nom); // créer un input de type texte avec comme val
 $form->addTextField('prenom',$prenom); // créer un input de type texte avec comme valeur par défaut $prenom
 $form->addSubmitButton('Modifier'); //Créer un bouton pour soumettre le formulaire se nommant Modifier
 $form->addSelect('animal',$options);
-$form->addTextArea('animal','tititututototata');
-$form->addRadio('animal',$radios);
+$form->addTextArea('tt','tititututototata');
+$form->addRadio('anmaux',$radios);
 echo $form->build(); // générer le formulaire

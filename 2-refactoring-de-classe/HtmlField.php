@@ -1,16 +1,17 @@
 <?php
 abstract class HtmlField {
-    private $name;
-    private $value;
+    protected $name;
+    protected $value;
 
-    private function isValid(){
+    private function isValid($value){
         return true;
     }
 
-    public function __construct($name, $value) {
-        if ($this->isValid()) { 
+    public function __construct(string $name, string $value) {
+        if ($this->isValid($this->value)) { 
             $this->name= $name;
             $this->value = $value;
         }
     }
+
 }

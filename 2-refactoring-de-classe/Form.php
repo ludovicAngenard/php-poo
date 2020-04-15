@@ -1,5 +1,9 @@
 <?php
-class Form{
+include 'HtmlField.php';
+include 'TextField.php';
+include 'NumberField.php';
+include 'ChekboxField.php';
+class Form {
 
     private $fields;
     private $method;
@@ -12,19 +16,18 @@ class Form{
         $this->method = $method;
     }
     public function addTextField(String $fieldName, String $fieldValue)
-    {
-        $this->fields[] = "<input type='text' name='$fieldName' value='$fieldValue'>";
+    {   
+        $this->fields[] = new TextField($fieldName, $fieldValue);
         return $this;
     }
     public function addNumberField(String $fieldName, int $fieldValue) {
-        $this->fields[] = "<input type='number' name='$fieldName' value='$fieldValue'>";
+        $this->fields[] = new NumberField($fieldName, $fieldValue);
         return $this;
     }
 
     public function addCheckboxField(String $fieldName, bool $fieldValue)
     {
-        $checked = ($fieldValue)?'checked':'';
-        $this->fields[] = "<input type='checkbox' name='$fieldName' $checked>";
+        $this->fields[] = new CheckboxField($fieldName, $fieldValue);
         return $this;
 
     }
