@@ -15,13 +15,15 @@ class Form {
         $this->action = $action;
         $this->method = $method;
     }
-    public function addTextField(String $fieldName, String $fieldValue)
-    {   
+    public function addTextField(String $fieldName,  $fieldValue)
+    {  
         $this->fields[] = new TextField($fieldName, $fieldValue);
         return $this;
     }
     public function addNumberField(String $fieldName, int $fieldValue) {
+        
         $this->fields[] = new NumberField($fieldName, $fieldValue);
+        
         return $this;
     }
 
