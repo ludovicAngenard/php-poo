@@ -48,4 +48,5 @@ Tout d'abord ne serait-il pas encorepossible de refactorer vos méthodes `addTex
 De plus, suite à cette décomposition en classes. Ne serait-il possible d'utiliser la méthode magique `__toString` d'une manière pertinente ?
 
 # Ressources
+* [Heritage et Polymorphisme sur OpenClassroom](https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1666684-lheritage)
 * [Refactoring Guru](https://refactoring.guru)
