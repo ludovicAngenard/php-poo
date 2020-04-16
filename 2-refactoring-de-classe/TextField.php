@@ -4,7 +4,7 @@
     protected function isValid($value){
        
         if (!is_string($value) || strlen($value)<2 ){
-            throw new Exception("hop hop hop c'est pas bon, la valeur : '$value' est incorrecte.");
+            throw new Exception("hop hop hop c'est pas bon, tu as mis '$value' au lieu d'un texte qui doit être supérieur à 1 caractère.");
         }
         else{
             return true;

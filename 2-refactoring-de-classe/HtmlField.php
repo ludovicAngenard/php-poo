@@ -3,8 +3,9 @@ abstract class HtmlField {
     protected $name;
     protected $value;
 
-        if ($this->isValid($this->value)) { 
+        
     public function __construct(string $name, string $value) {
+        if ($this->isValid($value)) { 
             $this->name= $name;
             $this->value = $value;
         }
@@ -15,5 +16,5 @@ abstract class HtmlField {
         return true;
     }
 
-    
+    abstract public function __tostring();
 }
