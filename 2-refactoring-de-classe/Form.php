@@ -5,7 +5,7 @@ include 'NumberField.php';
 include 'ChekboxField.php';
 class Form {
 
-    private $fields;
+    private $fields = [];
     private $method;
     private $action;
     private $button;

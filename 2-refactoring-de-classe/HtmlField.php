@@ -3,8 +3,8 @@ abstract class HtmlField {
     protected $name;
     protected $value;
 
-    public function __construct(string $name, string $value) {
         if ($this->isValid($this->value)) { 
+    public function __construct(string $name, string $value) {
             $this->name= $name;
             $this->value = $value;
         }
