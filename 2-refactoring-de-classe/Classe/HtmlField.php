@@ -2,12 +2,11 @@
 abstract class HtmlField {
     protected $name;
     protected $value;
-
-        
+   
     public function __construct(string $name, string $value) {
         if ($this->isValid($value)) { 
             $this->name= $name;
-            $this->value = $value;
+            $this->value = htmlspecialchars($this->value);
         }
     }
 

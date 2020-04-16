@@ -17,27 +17,32 @@ class Form {
 
     public function classeField(string $classe,string $fieldName,string $fieldValue)
     {
-        return $this->fields[] = new $classe($fieldName, $fieldValue);
+        $this->fields[] = new $classe($fieldName, $fieldValue);
+        return $this;
     }
 
     public function addTextField(String $fieldName,  string $fieldValue)
     {  
-       return $this->classeField('TextField',$fieldName,$fieldValue);  
+       $this->classeField('TextField',$fieldName,$fieldValue);  
+       return $this;
     }
 
     public function addNumberField(String $fieldName, int $fieldValue) 
     {    
-        return $this->classeField('NumberField',$fieldName,$fieldValue);     
+        $this->classeField('NumberField',$fieldName,$fieldValue);     
+        return $this;
     }
 
     public function addCheckboxField(String $fieldName, bool $fieldValue)
     {
-        return $this->classeField('CheckboxField',$fieldName,$fieldValue);
+        $this->classeField('CheckboxField',$fieldName,$fieldValue);
+        return $this;
     }
 
     public function addSubmitButton($text)
     {
         $this->button = "<input type='submit' value='$text'>";
+        return $this;
     }
 
     public function build()
