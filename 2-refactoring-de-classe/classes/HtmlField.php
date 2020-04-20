@@ -3,14 +3,15 @@ abstract class HtmlField {
     protected $name;
     protected $value;
 
-    private function isValid($value){
+    protected function isValid($value){
         return true;
     }
 
     public function __construct($name, $value) {
         if ($this->isValid($value)) { 
             $this->name= $name;
-            $this->value = $value;
+            $this->value = htmlspecialchars($value);
         }
     }
+    abstract public function __toString();
 }
