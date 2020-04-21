@@ -33,3 +33,16 @@ Quant aux deux fiers éclaireurs en tête de file, ne vous inquiétez pas, le re
 Aujourd'hui vous aurez une journée qui devrait plutôt être considérée comme un peu de repos, même si en réalité, il y a pas mal de boulot à abattre au sein du dossier [3-php-training-mysql](./3-php-training-mysql). 
 
 Bon courage à tout.te.s !
+
+# Exercice du Mardi 21 Avril 2020
+
+Félicitations! Vous voici maintenant devenus des développeurs expérimentés en programmation orientée objet. Bon expérimentés est peut être un peu exagéré... :) Il vous reste encore pas mal de travail et de découvertes à réaliser dans ce domaine. Mais il faut avouer qu'un beau travail a été accompli. 
+
+Grâce à **4wge**, une correction est disponible dans le dossier [2-refactoring-de-classe](./2-refactoring-de-classe).
+Je vous laisse le soin de le lire et de le comprendre. Il a sûrement réalisé des choses que vous n'avez pas faites.
+
+L'objectif aujourd'hui est de commencer à entr'apercevoir ce qu'est un design pattern et plus particulièrement celui du [MVC](https://www.supinfo.com/articles/single/8729-architecture-mvc-qu-est-ce-que-c-est). Aujourd'hui, il est temps de réaliser les dites **V**ues de ce dernier.
+
+Je vous invite donc à travailler au sein du dossier [3-php-training-mysql](./3-php-training-mysql). Prenez le temps de lire le README et de regarder l'ensemble de fichiers déjà présents avant de vous atteler à la tâche!
+
+Bon courage à tout.te.s !
