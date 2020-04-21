@@ -8,8 +8,30 @@ class Boardgame {
     private $age_max;
     private $picture;
 
-    public function __construct($data){
-        // TODO : Hydrate the object.
+    public function __construct($datas){
+        // TODO : Hydrate the object
+        if (!empty($datas)){
+            foreach ($datas as $index=>$data)
+            $method="set".$index;
+                if ( $this->$method != "setPrivateId" &&  $this->method != "setName" &&  $this->method != "setPlayersMin" &&  $this->method != "setPlayersMax" &&  $this->method != "setAgeMin" &&  $this->method != "setAgeMax" && $this->method != "setPicture")
+                {
+                throw new Exception('ohlala quelle erreur mais QUELLE ERREUR dans le tableau !');
+                }
+                else{
+                    $this->$method($data);
+                }
+            
+        }
+       
+        
+        }
+
+    public function getPrivateId() {
+        return $this->id;
+    }
+    public function setPrivateId(int $id) {
+        $this->id = $id;
+        return $this;
     }
 
     public function getName() {
