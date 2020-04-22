@@ -8,12 +8,12 @@ class Boardgame {
     private $age_max;
     private $picture;
 
-    public function __construct($datas){
+    public function __construct($datas=[]){
         // TODO : Hydrate the object
         if (!empty($datas)){
             foreach ($datas as $index=>$data)
             $method="set".$index;
-                if ( $this->$method != "setPrivateId" &&  $this->method != "setName" &&  $this->method != "setPlayersMin" &&  $this->method != "setPlayersMax" &&  $this->method != "setAgeMin" &&  $this->method != "setAgeMax" && $this->method != "setPicture")
+                if (!method_exists ($this, $method ))
                 {
                 throw new Exception('ohlala quelle erreur mais QUELLE ERREUR dans le tableau !');
                 }
@@ -26,10 +26,10 @@ class Boardgame {
         
         }
 
-    public function getPrivateId() {
+    public function getId() {
         return $this->id;
     }
-    public function setPrivateId(int $id) {
+    public function setId(int $id) {
         $this->id = $id;
         return $this;
     }
@@ -41,17 +41,17 @@ class Boardgame {
         $this->name = $name;
         return $this;
     }
-    public function getPlayersMin() {
+    public function getPlayerMin() {
         return $this->players_min;
     }
-    public function setPlayersMin(int $players_min) {
+    public function setPlayerMin(int $players_min) {
         $this->players_min = $players_min;
         return $this;
     }
-    public function getPlayersMax() {
+    public function getPlayerMax() {
         return $this->players_max;
     }
-    public function setPlayersMax(int $players_max) {
+    public function setPlayerMax(int $players_max) {
         $this->players_max = $players_max;
         return $this;
     }

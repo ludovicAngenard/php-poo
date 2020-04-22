@@ -1,0 +1,33 @@
+.content{
+    width:80%;
+    height: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.name{
+    width: 30%;
+    float: left;
+    font-size:  2rem;
+}
+.number{
+    width: 6%;
+    float: left;
+    
+}
+.picture{
+    width: 40%;
+    float: right;
+}
+.clear{
+    clear:both;
+}
+.title{
+    text-align: center;
+    font-size:  5rem;
+    padding-bottom: 5rem;
+}
+.text{
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
