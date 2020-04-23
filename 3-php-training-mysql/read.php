@@ -12,8 +12,8 @@
     include "inc/Boardgame.php";
     
     $Instance= DBConnection::getInstance();
-    //cette partie ne fonctionne pas.
     $results=$Instance->getConnection()->query("SELECT * FROM boardgames ",)->fetchAll(PDO::FETCH_CLASS, Boardgame::class);
+    
     echo "<div class='content'>";
     echo "<div class='number text'> Identifiant</div>";
     echo "<div class='name text'>Nom du jeu</div>";

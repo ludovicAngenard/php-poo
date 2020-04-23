@@ -4,18 +4,19 @@ class Boardgame {
     private $name;
     private $players_min;
     private $players_max;
-    private $age_min;
-    private $age_max;
+    private $min_age;
+    private $max_age;
     private $picture;
+
 
     public function __construct($datas=[]){
         // TODO : Hydrate the object
         if (!empty($datas)){
             foreach ($datas as $index=>$data)
-            $method="set".$index;
+            $method='set'.str_replace('_', '', ucwords($index, '_'));;
                 if (!method_exists ($this, $method ))
                 {
-                throw new Exception('ohlala quelle erreur mais QUELLE ERREUR dans le tableau !');
+                throw new Exception($method.'ohlala quelle erreur mais QUELLE ERREUR dans le tableau !');
                 }
                 else{
                     $this->$method($data);
