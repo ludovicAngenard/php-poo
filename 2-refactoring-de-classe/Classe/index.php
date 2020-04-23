@@ -14,10 +14,12 @@ $is_available = (bool) true;
 // on essaye d'instancier la classe form et de générer le formulaire
 try{
 $form = new Form($action, $method);
-$form->addTextField('name',$name)
-    ->addNumberField('min_age',$min_age)
-    ->addNumberField('min_players',$min_players)
-    ->addNumberField('max_players',$max_players)
+$form->addTextField('Name',$name)
+    ->addNumberField('Picture',$picture)
+    ->addNumberField('AgeMin',$min_age)
+    ->addNumberField('PlayerMax',$min_players)
+    ->addNumberField('AgeMax',$max_players)
+    ->addNumberField('AgeMin',$min_players)
     ->addCheckboxField('is_available', $is_available)
     ->addSubmitButton('Modifier');
 }

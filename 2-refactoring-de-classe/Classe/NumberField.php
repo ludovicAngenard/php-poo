@@ -6,7 +6,7 @@
         if (!is_numeric($value)  ){
             throw new ExceptionIsANumberField("Vous n'avez pas mis un nombre ");
         }
-        elseif(strlen($value)==0){
+        elseif(strlen($value)<0){
             throw new ExceptionNothingNumberField("Vous n'avez rien ajouté");
         }
         elseif($value<=0){

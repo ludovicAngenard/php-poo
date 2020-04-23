@@ -15,7 +15,7 @@ class Form {
         $this->method = $method;
     }
 
-    public function classeField(array $field) // permet d'instancier les objets dans le tableau et retourne Form
+    public function classeField(HtmlField $field) // permet d'instancier les objets dans le tableau et retourne Form
     {
         $this->fields[] = $field;
         return $this;

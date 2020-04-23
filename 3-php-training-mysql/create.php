@@ -1,6 +1,7 @@
 <?php
 include 'inc/DBConnection.php';
 include 'inc/Boardgame.php';
+include '../2-refactoring-de-classe/Classe/Form.php';
 
 ?>
 <!DOCTYPE html>
@@ -33,43 +34,37 @@ include 'inc/Boardgame.php';
 					$prepare= $instance->getConnection()->prepare($query);
 
 					$execute= $prepare->execute( array ('name'=>$postName, 'playerMin'=>$postePlayerMin, 'playerMax'=>$postPlayerMax, 'ageMin'=>$postAgeMin,'ageMax'=>$postAgeMax,'picture'=>$postPicture));
-					echo " Votre jeu à bien été sélectionné.";
+					
+					if ($execute ==true){
+						echo'Le jeu de société a été ajouté avec succès.';
+					}
+					else{
+						echo'le message n\' a pas été ajouté.';
+						error_log($prepare->error_Code());
+					}
 				}
 				
 			}
 		}
-			
+		
 		
 	?>
 	<a href="./read.php">Liste des jeux</a>
 	<h1>Ajouter un jeu de société</h1>
-	<form action="#" method="post">
-		<div>
-			<label for="Name">Name</label>
-			<input type="text" required name="Name" value="">
-		</div>
-		<div>
-			<label for="AgeMin">Min Age</label>
-			<input type="number" required name="AgeMin" value="">
-		</div>
-		<div>
-			<label for="AgeMax">Max Age</label>
-			<input type="number"  required name="AgeMax" value="">
-		</div>
-		<div>
-			<label for="PlayerMin">Min Players</label>
-			<input type="number" required name="PlayerMin" value="">
-		</div>
-		<div>
-            <label for="PlayerMax">Max Players</label>
-            <input type="number" required name="PlayerMax" value="">
-        </div>
-		<div>
-			<label for="Picture">URL of a picture</label>
-			<input type="text" required name="Picture" value="">
-		</div>
-		<button type="submit" >Envoyer</button>
-	</form>
+<?php
+$action='#';
+$method='POST';
+$form= new Form($action,$method);
+$form->addTextField('Name','')
+	->addNumberField('AgeMin',1)
+	->addNumberField('AgeMax',1)	
+	->addNumberField('PlayerMin',1)
+	->addNumberField('PlayerMax',1)
+	->addTextField('Picture','')
+	->addSubmitButton('Modifier');
+echo $form->build(); 
+
+?>
 
 </body>
 </html>
