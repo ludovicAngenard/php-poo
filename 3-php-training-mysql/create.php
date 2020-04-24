@@ -61,7 +61,7 @@ $form->addTextField('Name','')
 	->addNumberField('PlayerMin',1)
 	->addNumberField('PlayerMax',1)
 	->addTextField('Picture','')
-	->addSubmitButton('Modifier');
+	->addSubmitButton('Ajouter');
 echo $form->build(); 
 
 ?>

@@ -13,6 +13,8 @@ if('POST' == $_SERVER['REQUEST_METHOD'] )
             if ($execute ==true)
             {
                 echo'Le jeu de société a été supprimé avec succès.';
+                header('Location:read.php'); 
+                exit;
             }
             else
             {

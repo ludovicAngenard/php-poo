@@ -10,6 +10,7 @@
     <?php
     include "inc/DBConnection.php";
     include "inc/Boardgame.php";
+
     
     $Instance= DBConnection::getInstance();
     $results=$Instance->getConnection()->query("SELECT * FROM boardgames ",)->fetchAll(PDO::FETCH_CLASS, Boardgame::class);
@@ -36,6 +37,7 @@
       
     }
     echo "</div>";
+    echo "<a href='create.php'> <input type='button' value='Ajouter'> </a>";
     ?>
 
 
