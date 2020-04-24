@@ -25,6 +25,7 @@
     $id=0;
     foreach ($results as $key => $result) {
       $id+=1;
+      echo "<a class='button ' href='delete.php?id=$id'>Supprimer</a>";
       echo "<div class='number '>".$result->getId()."</div>";
       echo "<div class='name '><a href=update.php?id=$id>".$result->getName()."</a></div>";
       echo "<div class='picture '> <img src=".$result->getPicture()."></image> </div>";
@@ -32,7 +33,7 @@
       echo "<div class='number '>".$result->getPlayerMax()."</div>";
       echo "<div class='number '>".$result->getAgeMin()."</div>";
       echo "<div class='number '>".$result->getAgeMax()."</div> <div class='clear'></div> </br>" ;
-
+      
     }
     echo "</div>";
     ?>

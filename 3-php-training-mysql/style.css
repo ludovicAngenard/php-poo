@@ -6,7 +6,7 @@
     margin-right: auto;
 }
 .name{
-    width: 30%;
+    width: 24%;
     float: left;
     font-size:  2rem;
 }
@@ -30,4 +30,9 @@
 .text{
     font-weight: bolder;
     font-size: 1.2rem;
+}
+.button{
+    width: 5%;
+    float: left;
+    font-size:  0.6rem;
 }
