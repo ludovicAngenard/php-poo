@@ -22,11 +22,11 @@
     echo "<div class='number text'>Joueurs Maximum</div>";
     echo "<div class='number text'>Age minimum </div>";
     echo "<div class='number text'>Age maximum</div> <div class='clear'></div> </br></br>" ;
+    $id=0;
     foreach ($results as $key => $result) {
-      
-
+      $id+=1;
       echo "<div class='number '>".$result->getId()."</div>";
-      echo "<div class='name '>".$result->getName()."</div>";
+      echo "<div class='name '><a href=update.php?id=$id>".$result->getName()."</a></div>";
       echo "<div class='picture '> <img src=".$result->getPicture()."></image> </div>";
       echo "<div class='number '>".$result->getPlayerMin()."</div>";
       echo "<div class='number '>".$result->getPlayerMax()."</div>";
