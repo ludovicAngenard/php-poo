@@ -7,25 +7,79 @@ class Boardgame {
     private $min_age;
     private $max_age;
     private $picture;
+    private $instance;			
+	private $query	;
+	private $prepare;
+    private $execute;
+    private $err;
+    
 
 
-    public function __construct($datas=[]){
+    public function __construct($datas=[])
+    {
         // TODO : Hydrate the object
-        if (!empty($datas)){
+        if ($this->isValid($datas))
+        {
             foreach ($datas as $index=>$data)
-            $method='set'.str_replace('_', '', ucwords($index, '_'));;
-                if (!method_exists ($this, $method ))
+            {
+                $method='set'.str_replace('_', '', ucwords($index, '_'));;
+                if (method_exists($this, $method ))
                 {
-                throw new Exception($method.'ohlala quelle erreur mais QUELLE ERREUR dans le tableau !');
-                }
-                else{
                     $this->$method($data);
                 }
-            
+            }
         }
        
         
         }
+    public function isValid(array $datas)
+    {
+        if (!empty($datas))
+        {      
+        if ( $datas['Name'] == "" || $datas['PlayerMin'] == "" || $datas['PlayerMax'] == "" || $datas['AgeMin'] == "" || $datas['AgeMax'] == "" || $datas['Picture'] == "")
+			{
+                var_dump($datas);
+                throw new Exception("C'est vide ");	
+            }
+            
+        elseif (!is_string($datas['Name']) || !is_string($datas['Picture']) )
+            {
+                throw new Exception("C'est pas bon");
+            }
+        elseif(!is_numeric($datas['PlayerMin']) || !is_numeric($datas['PlayerMax']) || !is_numeric($datas['AgeMin']) || !is_numeric($datas['AgeMax']))
+        {
+            throw new Exception("C'est pas bon");
+        }
+        elseif ( $datas['PlayerMin']<=0 || $datas['AgeMin']<=0  || $datas['PlayerMax']<$datas['PlayerMin'] || $datas['AgeMax']<$datas['AgeMin'])
+            {  
+                throw new Exception("C'est pas bon");
+            }
+        else
+        {
+            foreach($datas as $data)
+            {
+                if ( substr($data, 0,1)=="'" || substr($data, 0,1)=='"')
+                {
+                    throw new Exception("C'est pas bon");
+                }
+                else
+                {
+                    return true;
+                }
+            }
+      
+        }
+       
+    }
+}
+    public function create()
+    {
+        $this->instance= DBConnection::getInstance();		
+        $this->err = $this->instance->getConnection()->prepare("INSERT INTO boardgames (name,players_min,players_max,age_min,age_max,picture) VALUES (:name, :playerMin, :playerMax, :ageMin,:ageMax,:picture)");
+        $this->err->execute(array ('name'=>$this->name, 'playerMin'=>$this->players_min, 'playerMax'=>$this->players_max, 'ageMin'=>$this->min_age,'ageMax'=>$this->max_age,'picture'=>$this->picture));
+        echo $this->err->errorCode();		
+	
+    }
 
     public function getId() {
         return $this->id;
