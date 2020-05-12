@@ -3,19 +3,14 @@
     <?php
     include "inc/DBConnection.php";
     include "inc/Boardgame.php";
-    include 'presentation.php';
-    include "link.php";
-    include "title.php";
-    include "input.php";
-    include "div.php";
-    include 'picture.php';
+    include 'autoload.php';
+
    
 
     
     $Instance= DBConnection::getInstance();
     $results=$Instance->getConnection()->query("SELECT * FROM boardgames ",)->fetchAll(PDO::FETCH_CLASS, Boardgame::class);
-    
-
+  
 
     $presentation=new Presentation('style.css','Liste de jeux de sociétés');
     $presentation->div('number text','Identifiant' )
