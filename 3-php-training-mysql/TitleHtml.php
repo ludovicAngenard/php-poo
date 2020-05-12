@@ -7,7 +7,7 @@
        $this->content=$content;
     }
     public function __toString(){
-        return  "<h1 class=$this->class>$this->content</h1>";
+        return  "<h1 class='$this->class'>$this->content</h1>";
         
     }  
 }

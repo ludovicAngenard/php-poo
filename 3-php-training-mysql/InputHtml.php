@@ -8,7 +8,7 @@
        $this->value=$value;
     }
     public function __toString(){
-        return  "<input type=$this->type value=$this->value>";
+        return  "<input type='$this->type' value='$this->value'>";
         
     }  
 }

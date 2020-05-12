@@ -7,7 +7,7 @@
        $this->content=$content;
     }
     public function __toString(){
-        return "<div class= $this->class> $this->content </div>";
+        return "<div class= '$this->class'> $this->content </div>";
         
     }  
 }

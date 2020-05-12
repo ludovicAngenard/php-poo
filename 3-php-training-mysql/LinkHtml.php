@@ -9,7 +9,7 @@
        $this->href=$href;
     }
     public function __toString(){
-        return  "<a class= $this->class href= $this->href> $this->content</a>";
+        return  "<a class= '$this->class' href= '$this->href'> $this->content</a>";
         
     }  
 }
